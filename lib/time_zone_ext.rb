@@ -38,8 +38,8 @@ module TimeZoneExt
           date_map.merge!({k =>  v})
         end
       end
-      s.gsub(/\b(#{date_map.keys.join("|") })\b/) {|match| date_map[match] }
-      s
+      unloc_date_s = s.gsub(/\b(#{date_map.keys.join("|") })\b/) {|match| date_map[match] }
+      unloc_date_s || s
     end
   end
 
